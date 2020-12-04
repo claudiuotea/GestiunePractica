@@ -29,6 +29,7 @@ dependencies {
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
 	// https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
 	compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.1.6.Final'
-
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.4.0'
 }
 

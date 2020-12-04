@@ -37,11 +37,11 @@ public class RepoUser implements IRepoUser {
             tx = session.beginTransaction();
 
             boolean emailExist = this.findByEmail(a.getEmail());
-            boolean usernameExist = this.findByUsername(a.getUsername());
+            User usernameExist = this.findByUsername(a.getUsername());
 
             if(emailExist)
                 throw new ServerException("This email is used!");
-            if(usernameExist)
+            if(usernameExist != null)
                 throw new ServerException("This username is used!");
 
             userID = (Integer) session.save(a);
@@ -59,7 +59,7 @@ public class RepoUser implements IRepoUser {
     Used to search if database already contains a user with this username
      */
     @Override
-    public boolean findByUsername(String username) {
+    public User findByUsername(String username) {
         User found = null;
         try(Session session = sessionFactory.openSession()) {
             Transaction tx = null;
@@ -74,9 +74,7 @@ public class RepoUser implements IRepoUser {
                     tx.rollback();
             }
         }
-        if (found == null)
-            return false;
-        return true;
+        return found;
     }
 
     /*
