@@ -7,47 +7,42 @@ import javax.persistence.*;
 @Entity
 @Table(name = "USER")
 public class User {
-    @Id@GeneratedValue
-    @Column(name = "id")
-    private int id;
+
+    @Id
+    @GeneratedValue
+    private Long idUser;
 
     @NotNull
-    @Column(name="username",nullable = false)
+    @Column(nullable = false)
     private String username;
+    @Column(nullable = false)
     @NotNull
-    @Column(name="password",nullable = false)
-    private String password;
-    @NotNull
-    @Column(name="email",nullable = false)
     private String email;
-    @Column(name="verified")
-    private boolean verified;
+    @Column(nullable = false)
+    @NotNull
+    private String password;
+
+    //role it's used to decide where the user can navigate (which paths)
+    @Column(nullable = false)
+    private String role;
 
     public User() {
     }
 
-    public boolean isVerified() {
-        return verified;
+    public Long getIdUser() {
+        return idUser;
     }
 
-    public void setVerified(boolean verified) {
-        this.verified = verified;
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
     }
 
-    public int getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -58,11 +53,19 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getRole() {
+        return role;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

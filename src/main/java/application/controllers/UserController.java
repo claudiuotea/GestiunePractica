@@ -1,10 +1,19 @@
 package application.controllers;
 
+import application.DTOOjbects.JwtResponse;
+import application.DTOOjbects.UserLoginDTO;
+import application.DTOOjbects.UserRegisterDTO;
 import application.Entities.User;
+import application.Entities.UserDetailsImpl;
 import application.repositories.RepoUser;
+import application.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,40 +23,49 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    private RepoUser repoUser;
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    AuthenticationManager authenticationManager;
 
-    /*
-    Returns the username and the JWT if the user has an account, bad credentials otherwise
-     */
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public ResponseEntity<?> loginUser(@RequestBody User user){
-        try{
-            User logged = repoUser.findByUsername(user.getUsername());
-            if(bCryptPasswordEncoder.matches(user.getPassword(),logged.getPassword()))
-            return new ResponseEntity<>(logged, HttpStatus.OK);
-            else throw new ServerException("Incorrect username or password!");
-        }
-        catch(ServerException e){
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        }
+    @Autowired
+    RepoUser userRepository;
+
+    @Autowired
+    BCryptPasswordEncoder encoder;
+
+    @Autowired
+    JwtUtils jwtUtils;
+
+    @PostMapping("/login")
+    public ResponseEntity<?> authenticateUser(@RequestBody UserLoginDTO loginRequest) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = jwtUtils.generateJwtToken(authentication);
+
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+        String role = userDetails.getAuthorities().iterator().next().getAuthority();
+        return ResponseEntity.ok(new JwtResponse(jwt,
+                userDetails.getUsername(),
+                role));
     }
 
-    /*
-    Returns OK if the account was created, error otherwise
-    We use bCryptPasswordEncoder to encode the password before we save it to database
-     */
-    @RequestMapping(value = "/register",method = RequestMethod.PUT)
-    public ResponseEntity<?> updateAliment(@RequestBody User user){
-        try{
-            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-            repoUser.addUser(user);
-            return new ResponseEntity<>(HttpStatus.OK);
+    @PostMapping("/register")
+    public ResponseEntity<?> registerUser(@RequestBody UserRegisterDTO signUpRequest) {
+        // Create new user's account
+
+        User user = new User();
+        user.setRole("USER");
+        user.setEmail(signUpRequest.getEmail());
+        user.setUsername(signUpRequest.getUsername());
+        //encode the password
+        user.setPassword(encoder.encode(signUpRequest.getPassword()));
+        try {
+            userRepository.saveUser(user);
         }
         catch (ServerException e){
             return new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
+        return ResponseEntity.ok("User registered successfully!");
     }
 
     @ExceptionHandler
