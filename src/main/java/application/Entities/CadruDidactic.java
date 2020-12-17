@@ -29,6 +29,10 @@ public class CadruDidactic {
     @Column(name = "pass", nullable = false)
     private String pass;
 
+    @OneToOne(optional = false)
+    @JoinColumn(name = "id_sectie", referencedColumnName = "id")
+    private Sectie sectie;
+
     public CadruDidactic(int id, String name, String functie, String tel, String fax, String email, String pass) {
         this.id = id;
         this.name = name;

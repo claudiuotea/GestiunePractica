@@ -17,6 +17,17 @@ public class Sectie {
     @Column(name = "secretara", nullable = false)
     private String secretara;
 
+    @OneToMany(optional = false)
+    @JoinColumn(name = "id_sectie", referencedColummnName = "id")
+    private List<Student> studenti;
+
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "id_sectie", referencedColumnName = "id")
+    private Facultate facultate;
+
+    @OneToOne(mappedBy = "sectie")
+    private CadruDidactic cadruDidactic;
+
     public Sectie(int id, String name, String secretara) {
         this.id = id;
         this.name = name;

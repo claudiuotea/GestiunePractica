@@ -28,4 +28,8 @@ public class Tutore {
 
     @Column(name = "fax", nullable = false)
     private String fax;
+
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "id_firma",referencedColumnName = "id")
+    private Firma firma;
 }

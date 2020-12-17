@@ -44,6 +44,14 @@ public class Student {
     @Column(name = "linie", nullable = false) //linia de studiu
     private String linie;
 
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "id_firma",referencedColumnName = "id")
+    private Firma firma;
+
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "id_sectie",referencedColumnName = "id")
+    private Sectie sectie;
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 

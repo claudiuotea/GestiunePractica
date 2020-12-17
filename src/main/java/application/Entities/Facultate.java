@@ -23,6 +23,10 @@ public class Facultate {
     @Column(name = "decan")
     private String decan;
 
+    @OneToMany(optional = false)
+    @JoinColumn(name = "id_sectie", referencedColummnName = "id")
+    private List<Sectie> sectii;
+
     public Facultate(int id, String name, String resp_pm, String resp_pr, String decan) {
         this.id = id;
         this.name = name;

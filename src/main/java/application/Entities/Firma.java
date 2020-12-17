@@ -44,6 +44,14 @@ public class Firma {
     @Column(name = "pass", nullable = false)
     private String pass;
 
+    @OneToMany(optional = false)
+    @JoinColumn(name = "id_firma", referencedColummnName = "id")
+    private List<Student> studenti;
+
+    @OneToMany(optional = false)
+    @JoinColumn(name = "id_firma", referencedColummnName = "id")
+    private List<Tutore> tutori;
+
     public int getId() {
         return id;
     }
