@@ -3,6 +3,7 @@ package application.Entities;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "USER")
@@ -12,15 +13,30 @@ public class User {
     @GeneratedValue
     private Long idUser;
 
-    @NotNull
+    @NotNull//(message = "Username cannot be empty";)
     @Column(nullable = false)
+    //@Pattern(regexp = ".+@stud.ubbcluj.ro", message = "Invalid email")
     private String username;
     @Column(nullable = false)
-    @NotNull
+    @NotNull//(message = "Email cannot be empty";)
+    @Pattern(regexp = ".+@.+")//, message = "Invalid email")
     private String email;
     @Column(nullable = false)
     @NotNull
     private String password;
+
+    //poate mai usor daca bagam si
+
+    //@Column(nullable = false)
+    //@NotNull
+    //@Pattern(regexp = "[1-8]\d{12}", message = "Invalid CNP")
+    //private long CNP;
+    //@.. private String serieBuletin;
+    //@.. private long numarBuletin;
+    //@.. private String cetatenie;
+    //@.. private Adress(putem face clasa Andress cu mai multe stringuri) address;
+    //@.. private long telephone;
+    //@.. private String faculty;
 
     //role it's used to decide where the user can navigate (which paths)
     @Column(nullable = false)
