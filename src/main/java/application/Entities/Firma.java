@@ -2,6 +2,7 @@ package application.Entities;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Firma")
@@ -44,12 +45,12 @@ public class Firma {
     @Column(name = "pass", nullable = false)
     private String pass;
 
-    @OneToMany(optional = false)
-    @JoinColumn(name = "id_firma", referencedColummnName = "id")
+    @OneToMany//(optional = false)
+    @JoinColumn(name = "id_firma", referencedColumnName = "id")
     private List<Student> studenti;
 
-    @OneToMany(optional = false)
-    @JoinColumn(name = "id_firma", referencedColummnName = "id")
+    @OneToMany//(optional = false)
+    @JoinColumn(name = "id_firma", referencedColumnName = "id")
     private List<Tutore> tutori;
 
     public int getId() {

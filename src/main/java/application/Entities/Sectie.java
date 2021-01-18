@@ -2,6 +2,7 @@ package application.Entities;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Sectie")
@@ -17,8 +18,8 @@ public class Sectie {
     @Column(name = "secretara", nullable = false)
     private String secretara;
 
-    @OneToMany(optional = false)
-    @JoinColumn(name = "id_sectie", referencedColummnName = "id")
+    @OneToMany//(optional = false)
+    @JoinColumn(name = "id_sectie", referencedColumnName = "id")
     private List<Student> studenti;
 
     @ManyToOne(optional = false, cascade = CascadeType.PERSIST)

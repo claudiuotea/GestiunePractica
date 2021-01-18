@@ -1,6 +1,6 @@
 package application.utils;
 
-import application.Entities.User;
+import application.Entities.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -15,6 +15,13 @@ public class HibernateUtils {
         try {
             Configuration configuration = new Configuration();
             configuration.addAnnotatedClass(User.class);
+            configuration.addAnnotatedClass(CadruDidactic.class);
+            configuration.addAnnotatedClass(Facultate.class);
+            configuration.addAnnotatedClass(Firma.class);
+            configuration.addAnnotatedClass(Sectie.class);
+            configuration.addAnnotatedClass(Student.class);
+            configuration.addAnnotatedClass(Tutore.class);
+
             configuration.configure();
 
             StandardServiceRegistryBuilder standardServiceRegistryBuilder = new StandardServiceRegistryBuilder();
