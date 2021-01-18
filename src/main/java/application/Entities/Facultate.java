@@ -2,6 +2,7 @@ package application.Entities;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Facultate")
@@ -23,8 +24,8 @@ public class Facultate {
     @Column(name = "decan")
     private String decan;
 
-    @OneToMany(optional = false)
-    @JoinColumn(name = "id_sectie", referencedColummnName = "id")
+    @OneToMany//(optional = false)
+    @JoinColumn(name = "id_sectie", referencedColumnName = "id")
     private List<Sectie> sectii;
 
     public Facultate(int id, String name, String resp_pm, String resp_pr, String decan) {
