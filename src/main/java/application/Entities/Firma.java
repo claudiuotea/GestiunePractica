@@ -51,7 +51,7 @@ public class Firma {
 
     @OneToMany//(optional = false)
     @JoinColumn(name = "id_firma", referencedColumnName = "id")
-    private List<Tutore> tutori;
+    private Tutore t;
 
     public int getId() {
         return id;
@@ -102,4 +102,12 @@ public class Firma {
     public String getPass() { return pass; }
 
     public void setPass(String pass) { this.pass = pass; }
+
+    public Tutore getT() {
+        return t;
+    }
+
+    public void setT(Tutore t) {
+        this.t = t;
+    }
 }

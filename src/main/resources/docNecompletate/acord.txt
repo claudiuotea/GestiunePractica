@@ -1,0 +1,46 @@
+ACORD
+privind efectuarea stagiilor de practică
+
+Prezentul acord se încheie între:
+ UNIVERSITATEA “BABEŞ-BOLYAI”, cu sediul în Cluj-Napoca, str. Mihail Kogălniceanu nr. 1, tel. 0264/405300,fax 0264/590592, cod
+fiscal 4305849, cont deschis la Trezoreria Cluj-Napoca cu IBAN RO76TREZ216504601X007224, reprezentată legal prin Rector prof. univ. dr.
+Daniel DAVID, în calitate de organizator de practică;
+ S.C. num_firma, cu sediul în sediu_firma, tel. tel_firma, fax fax_firma, cod
+fiscal fiscal_firma, cont deschis la bancar_firma cu IBAN iban_firma, reprezentată legal prin rep_firma, în calitate de partener de practică.
+
+ART. 1
+Obiectul acordului
+ (1)Părțile au convenit asupra efectuării de stagii de practică, în cadrul activităților partenerului de practică, de către un număr de nr_stud studenți
+înscrişi în ciclurile de studii ale organizatorului de practică după cum urmează:
+a) nr_stud_MI studenți, ciclul licență/master, specializarea Matematica si Informatica, Facultatea de Matematica si Informatica.
+b) nr_stud_I studenți, ciclul licență/master, specializarea Informatica, Facultatea de Matematica si Informatica.
+ (2)Stagiul de practică este realizat de practicanți în vederea dobândirii de competențe profesionale care exced procesului teoretic de învățământ.
+ ART. 2
+Statutul practicantului
+(1)Practicantul rămâne, pe toată durata stagiului de pregătire practică, student al instituției de învățământ superior.
+(2)Raporturile dintre practicant şi partenerul de practică nu sunt raporturi individuale de muncă, aşa cum sunt acestea reglementate de legislația
+specifică.
+ ART. 3
+ Condițiile de desfăşurare ale stagiilor de practică
+ (1)Stagiile de practică vor avea durata de 120 ore.
+ (2)Stagiile de practică vor fi efectuate cu respectarea Legii nr. 258/2007, a O.M.E.C.T. 3955/2008, a Regulamentelor interne ale organizatorului şi
+partenerului de practică, precum şi a oricăror alte prevederi legale aplicabile în vigoare.
+ (3)Organizatorul şi partenerul vor desemna persoane însărcinate cu coordonarea stagiilor de practică, cadre didactice supervizoare respectiv tutori.
+ (4)Persoanele desemnate de părți şi prevăzute la aliniatul precedent vor avea competența evaluării activității desfăşurate de practicanți.
+ (5)Informațiile confidențiale ale unei părți intrate în posesia celeilalte părți nu pot fi utilizate sub nicio formă de către aceasta din urmă fără un
+acord prealabil.
+ (6)Responsabilitățile concrete ale părților şi ale practicanților, alte aspecte legate de buna desfăşurare a stagiilor vor fi reglementate prin convențiicadru însoțite de portofolii de practică.
+ ART. 4
+ Clauze finale
+ (1)Prezentul acord se încheie pe durata anului universitar an_univ. Părțile pot conveni asupra prelungirii prin act adițional.
+ (2)Comunicările referitoare la executarea acordului şi a convențiilor care se vor încheia în baza lui se fac exclusiv în scris cu confirmarea
+recepționării.
+
+ Prezentul acord s-a încheiat azi, data_curenta, în 2 (două) exemplare, câte unul pentru fiecare parte.
+
+
+ORGANIZATOR								PARTENER
+Rector,	semnatura_rector						Reprezentant legal,semnatura_rep
+Prof. univ. dr. Daniel DAVID
+Vizat de legalitate,
+

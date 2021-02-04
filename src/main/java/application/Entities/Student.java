@@ -44,6 +44,10 @@ public class Student {
     @Column(name = "linie", nullable = false) //linia de studiu
     private String linie;
 
+    @NotNull
+    @Column(name = "grupa", nullable = false)
+    private String grupa;
+
     @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "id_firma",referencedColumnName = "id")
     private Firma firma;
@@ -67,6 +71,26 @@ public class Student {
     public String getCNP() { return CNP; }
     public void setCNP(String CNP) { this.CNP = CNP; }
 
+    public String getDataNastere()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.CNP.substring(5, 7));
+        sb.append(".");
+        sb.append(this.CNP.substring(3, 5));
+        sb.append(".");
+        if(this.CNP.charAt(0) == 6 || this.CNP.charAt(0) == 5)
+        {
+            sb.append("20");
+            sb.append(this.CNP.substring(1, 3));
+        }
+        if(this.CNP.charAt(0) == 2 || this.CNP.charAt(0) == 1)
+        {
+            sb.append("19");
+            sb.append(this.CNP.substring(1, 3));
+        }
+        return sb.toString();
+    }
+
     public String getCI() { return CI; }
     public void setCI(String CI) { this.CI = CI; }
 
@@ -87,4 +111,30 @@ public class Student {
 
     public String getLinie() { return linie; }
     public void setLinie(String linie) { this.linie = linie; }
+
+    public String getGrupa() { return grupa;}
+    public void setGrupa(String grupa) { this.grupa = grupa; }
+
+    public String getAnStudiu()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.grupa.charAt(1));
+        return sb.toString();
+    }
+
+    public Firma getFirma() {
+        return firma;
+    }
+
+    public void setFirma(Firma firma) {
+        this.firma = firma;
+    }
+
+    public Sectie getSectie() {
+        return sectie;
+    }
+
+    public void setSectie(Sectie sectie) {
+        this.sectie = sectie;
+    }
 }

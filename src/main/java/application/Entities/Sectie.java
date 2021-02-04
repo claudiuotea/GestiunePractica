@@ -53,4 +53,36 @@ public class Sectie {
     protected Object clone() throws CloneNotSupportedException { return super.clone(); }
     @Override
     public String toString() { return super.toString(); }
+
+    public String getSecretara() {
+        return secretara;
+    }
+
+    public void setSecretara(String secretara) {
+        this.secretara = secretara;
+    }
+
+    public List<Student> getStudenti() {
+        return studenti;
+    }
+
+    public void setStudenti(List<Student> studenti) {
+        this.studenti = studenti;
+    }
+
+    public Facultate getFacultate() {
+        return facultate;
+    }
+
+    public void setFacultate(Facultate facultate) {
+        this.facultate = facultate;
+    }
+
+    public CadruDidactic getCadruDidactic() {
+        return cadruDidactic;
+    }
+
+    public void setCadruDidactic(CadruDidactic cadruDidactic) {
+        this.cadruDidactic = cadruDidactic;
+    }
 }
