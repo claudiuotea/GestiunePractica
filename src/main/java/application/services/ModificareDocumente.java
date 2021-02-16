@@ -7,14 +7,14 @@ import java.util.List;
 public class ModificareDocumente
 {
     private List <String> file;
-    private void completare(String filename, Student S)
+    public void completare(String filename, Student S)
     {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
             String line = bufferedReader.readLine();
             while (line != null)
             {
-                file.add(line);
+
                 line = line.replace("num_firma", S.getFirma().getName());
                 line = line.replace("tel_firma", S.getFirma().getTel());
                 line = line.replace("fax_firma", S.getFirma().getFax());
@@ -45,7 +45,7 @@ public class ModificareDocumente
 
                 line = line.replace("nume_supervizor", S.getSectie().getCadruDidactic().getName());
                 line = line.replace("functie_supervizor", S.getSectie().getCadruDidactic().getFunctie());
-                line = line.replace("telefon_spervizor", S.getSectie().getCadruDidactic().getTel());
+                line = line.replace("telefon_supervizor", S.getSectie().getCadruDidactic().getTel());
                 line = line.replace("fax_supervizor", S.getSectie().getCadruDidactic().getFax());
                 line = line.replace("email_supervizor", S.getSectie().getCadruDidactic().getEmail());
 
@@ -54,19 +54,26 @@ public class ModificareDocumente
                 line = line.replace("semnatura_student", S.getName());
                 line = line.replace("semnatura_supervizor", S.getSectie().getCadruDidactic().getName());
 
+                file.add(line);
                 line = bufferedReader.readLine();
 
-                File docCompletat = new File(S.getName());
-                FileOutputStream fos = new FileOutputStream(docCompletat);
-                OutputStreamWriter osw = new OutputStreamWriter(fos);
+            }
+            File docCompletat = new File(S.getName()+".txt");
+            FileOutputStream fos = new FileOutputStream(docCompletat);
+            OutputStreamWriter osw = new OutputStreamWriter(fos);
 
-                for (String value : file) {
-                    osw.write(value);
-                }
-                osw.close();
+            for (String value : file) {
+                osw.write(value);
+                osw.write("\n");
+                //osw.close();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public ModificareDocumente() {
+        this.file = new ArrayList<>();
+
     }
 }

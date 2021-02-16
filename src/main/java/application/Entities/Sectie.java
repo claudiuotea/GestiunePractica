@@ -29,12 +29,6 @@ public class Sectie {
     @OneToOne(mappedBy = "sectie")
     private CadruDidactic cadruDidactic;
 
-    public Sectie(int id, String name, String secretara) {
-        this.id = id;
-        this.name = name;
-        this.secretara = secretara;
-    }
-
     public int getId() { return id; }
     public String getName() { return name; }
     public String getResp_pm() { return secretara; }
@@ -83,6 +77,15 @@ public class Sectie {
     }
 
     public void setCadruDidactic(CadruDidactic cadruDidactic) {
+        this.cadruDidactic = cadruDidactic;
+    }
+
+    public Sectie(int id, String name, String secretara, List<Student> studenti, Facultate facultate, CadruDidactic cadruDidactic) {
+        this.id = id;
+        this.name = name;
+        this.secretara = secretara;
+        this.studenti = studenti;
+        this.facultate = facultate;
         this.cadruDidactic = cadruDidactic;
     }
 }

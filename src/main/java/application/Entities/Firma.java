@@ -45,9 +45,11 @@ public class Firma {
     @Column(name = "pass", nullable = false)
     private String pass;
 
+    /*
     @OneToMany//(optional = false)
     @JoinColumn(name = "id_firma", referencedColumnName = "id")
     private List<Student> studenti;
+     */
 
     @OneToMany//(optional = false)
     @JoinColumn(name = "id_firma", referencedColumnName = "id")
@@ -108,6 +110,23 @@ public class Firma {
     }
 
     public void setT(Tutore t) {
+        this.t = t;
+    }
+
+    public Firma(int id, String name, String pers, String adresa, String tel, String fax, String cod, String banca, String iban, String rep, String email, String pass, Tutore t) {
+        this.id = id;
+        this.name = name;
+        this.pers = pers;
+        this.adresa = adresa;
+        this.tel = tel;
+        this.fax = fax;
+        this.cod = cod;
+        this.banca = banca;
+        this.iban = iban;
+        this.rep = rep;
+        this.email = email;
+        this.pass = pass;
+       // this.studenti = studenti;
         this.t = t;
     }
 }

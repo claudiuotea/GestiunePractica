@@ -137,4 +137,22 @@ public class Student {
     public void setSectie(Sectie sectie) {
         this.sectie = sectie;
     }
+
+    public Student(int id, String user, String pass, String name, String CNP, String CI, String cetatenie, String domiciliu, String tel, String email, String oras_n, String linie, String grupa, Firma firma, Sectie sectie) {
+        this.id = id;
+        this.user = user;
+        this.pass = pass;
+        this.name = name;
+        this.CNP = CNP;
+        this.CI = CI;
+        this.cetatenie = cetatenie;
+        this.domiciliu = domiciliu;
+        this.tel = tel;
+        this.email = email;
+        this.oras_n = oras_n;
+        this.linie = linie;
+        this.grupa = grupa;
+        this.firma = firma;
+        this.sectie = sectie;
+    }
 }

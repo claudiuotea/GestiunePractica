@@ -29,20 +29,10 @@ public class CadruDidactic {
     @Column(name = "pass", nullable = false)
     private String pass;
 
-    @OneToOne(optional = false)
+    /*@OneToOne(optional = false)
     @JoinColumn(name = "id_sectie", referencedColumnName = "id")
     private Sectie sectie;
-
-    public CadruDidactic(int id, String name, String functie, String tel, String fax, String email, String pass) {
-        this.id = id;
-        this.name = name;
-        this.functie = functie;
-        this.tel = tel;
-        this.fax = fax;
-        this.email = email;
-        this.pass = pass;
-    }
-
+     */
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -74,4 +64,15 @@ public class CadruDidactic {
     protected Object clone() throws CloneNotSupportedException { return super.clone(); }
     @Override
     public String toString() { return super.toString(); }
+
+    public CadruDidactic(int id, String name, String functie, String tel, String fax, String email, String pass) {
+        this.id = id;
+        this.name = name;
+        this.functie = functie;
+        this.tel = tel;
+        this.fax = fax;
+        this.email = email;
+        this.pass = pass;
+        //this.sectie = sectie;
+    }
 }

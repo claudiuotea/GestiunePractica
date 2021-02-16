@@ -24,18 +24,12 @@ public class Facultate {
     @Column(name = "decan")
     private String decan;
 
-    @OneToMany//(optional = false)
+    /*@OneToMany//(optional = false)
     @JoinColumn(name = "id_sectie", referencedColumnName = "id")
     private List<Sectie> sectii;
 
-    public Facultate(int id, String name, String resp_pm, String resp_pr, String decan) {
-        this.id = id;
-        this.name = name;
-        this.resp_pm = resp_pm;
-        this.resp_pr = resp_pr;
-        this.decan = decan;
-    }
 
+     */
     public int getId() { return id; }
     public String getName() { return name; }
     public String getResp_pm() { return resp_pm; }
@@ -59,4 +53,12 @@ public class Facultate {
     @Override
     public String toString() { return super.toString(); }
 
+    public Facultate(int id, String name, String resp_pm, String resp_pr, String decan) {
+        this.id = id;
+        this.name = name;
+        this.resp_pm = resp_pm;
+        this.resp_pr = resp_pr;
+        this.decan = decan;
+       // this.sectii = sectii;
+    }
 }

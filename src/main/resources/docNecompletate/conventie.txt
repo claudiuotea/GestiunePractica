@@ -6,7 +6,7 @@ privind efectuarea stagiului de practică
 1. UNIVERSITATEA “BABEŞ-BOLYAI”, instituţie de învăţământ superior cu sediul în Cluj-Napoca 400084, str. Mihail Kogălniceanu nr. 1, cod fiscal 4305849, cont IBAN RO76TREZ216504601X007224 deschis la Trezoreria Cluj-Napoca, tel. 0264.405300, fax 0264.591906, e-mail staff@ubbcluj.ro, reprezentată de d-nul prof. univ. dr. Daniel DAVID în calitate de rector, denumită în continuare organizator de practică,
 2. Societatea comercială/instituţia publică centrală ori locală/persoana juridică num_firma, cu sediul în sediu_firma, tel. tel_firma, fax fax_firma, email -, cod fiscal/CUI fiscal_firma, cont deschis la bancar_firma, reprezentată de rep_firma, în calitate de -,
 denumită în continuare partener de practică, adresa unde se va desfăşura stagiul de practică fiind -,
-3. D-nul/ D-ra/ D-na nume_stud, cetăţean cetatenie_stud, domiciliat(ă)în adresa_stud, tel. tel_stud, email email_stud, CNP CNP_stud, legitimat(ă) cu B.I./C.I./paşaport CI_sud, născut la data_nastere_stud, în oras_natal_stud,
+3. D-nul/ D-ra/ D-na num_stud, cetăţean cetatenie_stud, domiciliat(ă)în adresa_stud, tel. tel_stud, email email_stud, CNP CNP_stud, legitimat(ă) cu B.I./C.I./paşaport CI_sud, născut la data_nastere_stud, în oras_natal_stud,
   la Universitatea „Babeş-Bolyai” din Cluj-Napoca, Facultatea de Matematică şi Informatică, în anul an_studiu,
 grupa grupa_stud, specializarea specializare_stud, linia de studiu linie_studiu, denumit(ă) în continuare practicant.
     ART. 1. Obiectul convenţiei-cadru

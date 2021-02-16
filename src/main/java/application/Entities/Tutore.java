@@ -29,9 +29,9 @@ public class Tutore {
     @Column(name = "fax", nullable = false)
     private String fax;
 
-    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "id_firma",referencedColumnName = "id")
-    private Firma firma;
+    //@ManyToOne(optional = false, cascade = CascadeType.PERSIST)
+    //@JoinColumn(name = "id_firma",referencedColumnName = "id")
+    //private Firma firma;
 
     public int getId() {
         return id;
@@ -89,11 +89,22 @@ public class Tutore {
         this.fax = fax;
     }
 
-    public Firma getFirma() {
+    /*public Firma getFirma() {
         return firma;
     }
 
     public void setFirma(Firma firma) {
         this.firma = firma;
+    }
+    */
+    public Tutore(int id, String name, String email, String pass, String functie, String tel, String fax) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.pass = pass;
+        this.functie = functie;
+        this.tel = tel;
+        this.fax = fax;
+        //this.firma = firma;
     }
 }
