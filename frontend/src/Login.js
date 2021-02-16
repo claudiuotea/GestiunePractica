@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import './style.css'
+import axios from 'axios'
 
-export default function Login({ toRegister }) {
+const PORT = '3306'
+const BASE_URL = `http://localhost:${PORT}`
+
+export default function Login({ toRegister, authenticate }) {
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
 
@@ -9,7 +13,15 @@ export default function Login({ toRegister }) {
 		event.preventDefault()
 
 		// Send data to backend
-		alert(`Username: ${username} and Password ${password}`)
+		axios.post(`${BASE_URL}/user/login`, {
+			username,
+			password
+		}).then(res => {
+			authenticate(res.data)
+		}).catch(e => {
+			console.log(e)
+			alert('Something went wrong')
+		})
 
 		// Reset form
 		setUsername('')

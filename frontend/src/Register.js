@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import './style.css'
+import axios from 'axios'
 
-export default function Register({ toLogin }) {
+const PORT = '3306'
+const BASE_URL = `http://localhost:${PORT}`
+
+export default function Register({ toLogin, authenticate }) {
 	const [userName, setUserName] = useState('')
 	const [firstName, setFirstName] = useState('')
 	const [lastName, setLastName] = useState('')
@@ -13,9 +17,20 @@ export default function Register({ toLogin }) {
 		event.preventDefault()
 
 		// Send data to backend
-		alert(
-			`Email: ${email} and Username: ${userName} and Firstname: ${firstName} and Lastname: ${lastName} and Password: ${password} and Confirm Password: ${confirmPassword}`
-		)
+		if (password !== confirmPassword) {
+			alert('Passwords do not match')
+			return
+		}
+
+		axios.post(`${BASE_URL}/user/register`, {
+			username: userName,
+			email,
+			password
+		}).then(res => {
+			authenticate(res.data)
+		}).catch(e => {
+			alert('Something went wrong')
+		})
 
 		// Reset form
 		setUserName('')
